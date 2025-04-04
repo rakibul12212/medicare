@@ -1,5 +1,5 @@
 export const assets = {
   images: {
-    logo: "/logo/logo.png",
+    logo: "/logo/logo.avif",
   },
 };

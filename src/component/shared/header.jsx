@@ -43,9 +43,9 @@ const HeaderPage = () => {
   };
 
   return (
-    <nav className="flex items-center justify-between p-4 bg-white w-full relative z-50 shadow-sm">
+    <nav className="flex items-center justify-between p-4 bg-[#F6F6F6] w-full relative z-50 shadow-sm">
       {/* Logo */}
-      <div className="flex items-center space-x-2">
+      <div className="flex items-center ">
         <Image src={logo} alt="logo" width={40} height={40} />
         <span className="text-xl font-bold">
           <span className="text-[#3B585E]">Medi</span>
