@@ -12,7 +12,7 @@ const VisitClinics = () => {
   const { clinic } = assets.clinic;
   return (
     <section className="flex flex-col md:flex-row items-center justify-between gap-x-8 bg-blue-500 text-white px-6 py-5 overflow-hidden">
-      {/* Left Content (50% width) */}
+     
       <motion.div
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -74,7 +74,7 @@ const VisitClinics = () => {
         </div>
       </motion.div>
 
-      {/* Right Image (50% width) */}
+   
       <motion.div
         initial={{ opacity: 0, x: 50 }}
         whileInView={{ opacity: 1, x: 0 }}
