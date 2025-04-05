@@ -8,4 +8,8 @@ export const assets = {
     bg3: "/hero/bg3.jpg",
     bg4: "/hero/bg4.jpg",
   },
+  about: {
+    about1:"/about/about1.webp",
+    about2:"/about/about2.webp",
+  }
 };

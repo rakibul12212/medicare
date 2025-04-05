@@ -4,32 +4,29 @@ import { useState } from "react";
 import { assets } from "@/assets";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, EffectFade } from "swiper/modules";
-import { FiPlus } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
+import ReadMoreBtn from "../UI/ReadMoreBtn";
 
 const slides = [
   {
     id: 1,
     text: "PASSION FOR CARING",
     title: "We Also Have A Ton Of Fun In The Process",
-    button: "READ MORE",
     bg: assets.hero.bg1,
   },
   {
     id: 2,
     text: "PASSION FOR CARING",
     title: "We Also Have A Ton Of Fun In The Process",
-    button: "READ MORE",
     bg: assets.hero.bg2,
   },
   {
     id: 3,
     text: "PASSION FOR CARING",
     title: "We Also Have A Ton Of Fun In The Process",
-    button: "READ MORE",
     bg: assets.hero.bg3,
   },
 ];
@@ -86,14 +83,7 @@ const HeroSection = () => {
                     <p className="text-gray-700 text-2xl md:text-4xl max-w-[280px] font-stretch-extra-expanded font-semibold mb-6">
                       {slide.title}
                     </p>
-                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded">
-                      <div className="flex items-center space-x-1">
-                        <span>{slide.button}</span>
-                        <span>
-                          <FiPlus />
-                        </span>
-                      </div>
-                    </button>
+                    <ReadMoreBtn />
                   </motion.div>
                 )}
               </AnimatePresence>
