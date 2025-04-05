@@ -83,7 +83,7 @@ const HeroSection = () => {
                     <h2 className="inline-block text-blue-600 bg-blue-100 px-3 py-1 rounded-md text-sm md:text-base mb-4">
                       {slide.text}
                     </h2>
-                    <p className="text-gray-700 text-2xl md:text-4xl max-w-[280px] font-semibold mb-6">
+                    <p className="text-gray-700 text-2xl md:text-4xl max-w-[280px] font-stretch-extra-expanded font-semibold mb-6">
                       {slide.title}
                     </p>
                     <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded">
