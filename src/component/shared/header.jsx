@@ -15,7 +15,7 @@ const HeaderPage = () => {
     { name: "HOME", hasDropdown: false },
     { name: "SERVICES", hasDropdown: true },
     { name: "BLOG", hasDropdown: true },
-    { name: "Make Appointment", hasDropdown: false },
+    { name: "MAKE  APPOINTMENT", hasDropdown: false },
     { name: "CONTACT US", hasDropdown: false },
   ];
 
@@ -45,13 +45,15 @@ const HeaderPage = () => {
   return (
     <nav className="flex items-center justify-between p-4 bg-[#F6F6F6] w-full relative z-50 shadow-sm">
       {/* Logo */}
-      <div className="flex items-center ">
-        <Image src={logo} alt="logo" width={40} height={40} />
-        <span className="text-xl font-bold">
-          <span className="text-[#3B585E]">Medi</span>
-          <span className="text-[#B9D977]">Care</span>
-        </span>
-      </div>
+      <Link href="#">
+        <div className="flex items-center ">
+          <Image src={logo} alt="logo" width={40} height={40} />
+          <span className="text-xl font-bold">
+            <span className="text-[#3B585E]">Medi</span>
+            <span className="text-[#4AC8B9]">Care</span>
+          </span>
+        </div>
+      </Link>
 
       {/* Desktop Menu */}
       <div className="hidden md:flex space-x-6 items-center">
@@ -66,7 +68,7 @@ const HeaderPage = () => {
 
       {/* Contact */}
       <div className="hidden md:flex items-center space-x-2">
-        <FaHeadset size={40} className="text-blue-500 text-xl" />
+        <FaHeadset size={40} className="text-[#4AC8B9] text-xl" />
         <div>
           <p className="text-lg font-semibold">+1800-001-658</p>
           <p className="text-sm text-gray-500">Mon-Fri: 6AM - 10PM</p>
@@ -85,7 +87,7 @@ const HeaderPage = () => {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            className="absolute h-screen top-16 left-0 w-full bg-blue-500 shadow-xs flex flex-col md:hidden"
+            className="absolute h-screen top-16 left-0 w-full bg-[#4AC8B9] shadow-xs flex flex-col md:hidden"
             variants={menuVariants}
             initial="hidden"
             animate="visible"
