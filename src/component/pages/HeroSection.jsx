@@ -83,7 +83,7 @@ const HeroSection = () => {
                     <p className="text-gray-700 text-2xl md:text-4xl max-w-[280px] font-stretch-extra-expanded font-semibold mb-6">
                       {slide.title}
                     </p>
-                    <ReadMoreBtn />
+                    <ReadMoreBtn variant="primary" />
                   </motion.div>
                 )}
               </AnimatePresence>

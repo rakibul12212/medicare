@@ -2,6 +2,7 @@ import React from "react";
 import HeroSection from "../pages/HeroSection";
 import Appointment from "../pages/Appointment";
 import About from "../pages/About";
+import CaregivingServices from "../pages/CaregivingServices";
 
 const HomePage = () => {
   return (
@@ -13,6 +14,7 @@ const HomePage = () => {
         </div>
       </div>
       <About />
+      <CaregivingServices />
     </>
   );
 };
