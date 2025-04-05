@@ -1,6 +1,7 @@
 import HeaderPage from "@/component/shared/header";
 import "./globals.css";
 import Footer from "@/component/shared/footer";
+import Container from "@/component/UI/Container/Container";
 
 export const metadata = {
   title: "MEDICARE",
@@ -11,9 +12,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <HeaderPage />
-        {children}
-        <Footer />
+        <Container>
+          <HeaderPage />
+          {children}
+          <Footer />
+        </Container>
       </body>
     </html>
   );
