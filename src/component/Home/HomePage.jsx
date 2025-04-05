@@ -1,8 +1,10 @@
-import React from "react";
+"use client";
+
 import HeroSection from "../pages/HeroSection";
 import Appointment from "../pages/Appointment";
 import About from "../pages/About";
 import CaregivingServices from "../pages/CaregivingServices";
+import VisitClinics from "../pages/VisitClinics";
 
 const HomePage = () => {
   return (
@@ -15,6 +17,7 @@ const HomePage = () => {
       </div>
       <About />
       <CaregivingServices />
+      <VisitClinics />
     </>
   );
 };

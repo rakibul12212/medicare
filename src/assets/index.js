@@ -17,4 +17,7 @@ export const assets = {
     cgs2: "/caregiving/cgs2.jpeg",
     cgs3: "/caregiving/cgs3.jpeg",
   },
+  clinic: {
+    clinic: "/clinic/clinic.avif",
+  },
 };
