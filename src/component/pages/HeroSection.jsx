@@ -1,11 +1,14 @@
 "use client";
 
+import { useState } from "react";
 import { assets } from "@/assets";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper/modules";
+import { Autoplay, Navigation, EffectFade } from "swiper/modules";
+import { FiPlus } from "react-icons/fi";
+import { motion, AnimatePresence } from "framer-motion";
 import "swiper/css";
 import "swiper/css/navigation";
-import { FiPlus } from "react-icons/fi";
+import "swiper/css/effect-fade";
 
 const slides = [
   {
@@ -17,68 +20,89 @@ const slides = [
   },
   {
     id: 2,
-    title: "PASSION FOR CARING",
+    text: "PASSION FOR CARING",
     title: "We Also Have A Ton Of Fun In The Process",
     button: "READ MORE",
     bg: assets.hero.bg2,
   },
   {
     id: 3,
-    title: "PASSION FOR CARING",
+    text: "PASSION FOR CARING",
     title: "We Also Have A Ton Of Fun In The Process",
     button: "READ MORE",
     bg: assets.hero.bg3,
   },
-  {
-    id: 4,
-    title: "PASSION FOR CARING",
-    title: "We Also Have A Ton Of Fun In The Process",
-    button: "READ MORE",
-    bg: assets.hero.bg4,
-  },
 ];
 
+const contentVariants = {
+  hidden: { opacity: 0, y: -50 },
+  visible: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: 0 },
+};
+
 const HeroSection = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
     <div className="relative w-full h-[500px] md:h-[600px]">
       <Swiper
         loop
-        autoplay={{ delay: 4000, disableOnInteraction: false }}
+        effect="fade"
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
         navigation={{
           nextEl: ".swiper-button-next-custom",
           prevEl: ".swiper-button-prev-custom",
         }}
-        modules={[Autoplay, Navigation]}
+        modules={[Autoplay, Navigation, EffectFade]}
         className="w-full h-full"
+        fadeEffect={{ crossFade: true }}
+        speed={1500} // increased for a smoother fade effect
+        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
       >
-        {slides.map((slide) => (
+        {slides.map((slide, index) => (
           <SwiperSlide key={slide.id}>
             <div
-              className="w-full h-full bg-cover bg-center flex items-center relative"
+              className="w-full h-full bg-cover bg-center flex items-center"
               style={{ backgroundImage: `url(${slide.bg})` }}
             >
-              <div className="bg-white/90 backdrop-blur-sm p-6 md:p-10 ml-4 md:ml-20 rounded-lg shadow-md max-w-md border border-white/40">
-                <h2 className="inline-block text-blue-600 bg-blue-100 px-3 py-1 rounded-md text-sm md:text-base mb-4">
-                  {slide.text}
-                </h2>
-                <p className="text-gray-700 text-2xl md:text-4xl max-w-[280px] font-semibold mb-6">
-                  {slide.title}
-                </p>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded">
-                  <div className="flex items-center space-x-1">
-                    <span>{slide.button}</span>
-                    <span>
-                      <FiPlus />
-                    </span>
-                  </div>
-                </button>
-              </div>
+              <AnimatePresence mode="wait">
+                {activeIndex === index && (
+                  <motion.div
+                    key={slide.id}
+                    variants={contentVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    transition={{
+                      delay: 0.8,
+                      duration: 1.2,
+                      ease: "easeInOut",
+                    }}
+                    className="bg-white/90 backdrop-blur-sm p-6 md:p-10 ml-4 md:ml-20 rounded-lg shadow-md max-w-md border border-white/40"
+                  >
+                    <h2 className="inline-block text-blue-600 bg-blue-100 px-3 py-1 rounded-md text-sm md:text-base mb-4">
+                      {slide.text}
+                    </h2>
+                    <p className="text-gray-700 text-2xl md:text-4xl max-w-[280px] font-semibold mb-6">
+                      {slide.title}
+                    </p>
+                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded">
+                      <div className="flex items-center space-x-1">
+                        <span>{slide.button}</span>
+                        <span>
+                          <FiPlus />
+                        </span>
+                      </div>
+                    </button>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
 
-      {/* Custom Navigation Buttons - only visible on 2xl screens */}
+      {/* Navigation Buttons (visible on 2xl screens) */}
       <div className="swiper-button-prev-custom hidden 2xl:flex absolute top-1/2 left-4 z-10 transform -translate-y-1/2 bg-white p-2 rounded-md shadow hover:bg-gray-100 transition">
         <svg
           className="w-5 h-5 text-gray-800"
