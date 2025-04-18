@@ -20,4 +20,13 @@ export const assets = {
   clinic: {
     clinic: "/clinic/clinic.avif",
   },
+  doctor: {
+    doctor: "/doctor/doctor.png",
+    doctor1: "/doctor/doctor1.webp",
+    doctor2: "/doctor/doctor2.webp",
+    doctor3: "/doctor/doctor3.webp",
+    doctor4: "/doctor/doctor4.webp",
+    doctor5: "/doctor/doctor5.webp",
+    doctor6: "/doctor/doctor6.webp",
+  },
 };

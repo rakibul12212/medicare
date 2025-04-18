@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Logo / Clinic Name */}
         <div>
-          <h2 className="text-2xl font-bold mb-4">HealthCare Clinic</h2>
+          <h2 className="text-2xl font-bold mb-4">MediCare</h2>
           <p className="text-sm">
             Providing compassionate care with advanced medical expertise.
           </p>

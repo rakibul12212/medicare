@@ -5,6 +5,9 @@ import Appointment from "../pages/Appointment";
 import About from "../pages/About";
 import CaregivingServices from "../pages/CaregivingServices";
 import VisitClinics from "../pages/VisitClinics";
+import WhoWeAre from "../pages/WhoWeAre";
+import OptometryServices from "../pages/OptometryServices";
+import Team from "../pages/Team";
 
 const HomePage = () => {
   return (
@@ -17,7 +20,10 @@ const HomePage = () => {
       </div>
       <About />
       <CaregivingServices />
+      <OptometryServices />
       <VisitClinics />
+      <Team/>
+      <WhoWeAre />
     </>
   );
 };
