@@ -19,11 +19,11 @@ const Footer = () => {
 
   return (
     <footer className="bg-[#14457B] text-white px-6 py-12 pt-28">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+      <div className="max-w-full px-5 md:px-20 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
         {/* Logo + Description */}
         <div>
           <Link href="#">
-            <div className="flex items-center ">
+            <div className="flex items-center gap-x-4">
               <Image src={logo} alt="logo" width={40} height={40} />
 
               <span className="text-xl font-bold ">
@@ -32,7 +32,7 @@ const Footer = () => {
               </span>
             </div>
           </Link>
-          <p className="text-sm mb-4">
+          <p className="text-sm mb-4 py-5">
             It helps designers plan out where the content will sit, the content
             to be written and approved.
           </p>
