@@ -31,11 +31,26 @@ const logos = [
     title: "Hospital",
     subtitle: "Tagline here",
   },
+  {
+    icon: <FaHeartbeat size={50} />,
+    title: "Hospital",
+    subtitle: "Tagline here",
+  },
+  {
+    icon: <FaHeartbeat size={50} />,
+    title: "Hospital",
+    subtitle: "Tagline here",
+  },
+  {
+    icon: <FaHeartbeat size={50} />,
+    title: "Hospital",
+    subtitle: "Tagline here",
+  },
 ];
 
 const Marque = () => {
   return (
-    <div className="bg-blue-500 py-10">
+    <div className="bg-blue-500 py-5 my-10">
       <Marquee speed={50} gradient={false}>
         <div className="flex items-center justify-center gap-16 w-full">
           {logos.map((logo, index) => (

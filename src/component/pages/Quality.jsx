@@ -4,7 +4,7 @@ import ReadMoreBtn from "../UI/ReadMoreBtn";
 const Quality = () => {
   return (
     <section
-      className="relative bg-fixed bg-cover bg-center text-white py-16 px-4 sm:px-8 md:px-12 lg:px-20 overflow-hidden"
+      className="relative bg-fixed bg-cover bg-center text-white py-20 px-4 sm:px-8 md:px-12 lg:px-20 overflow-hidden"
       style={{
         backgroundImage:
           "url('https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcm0yMThiYXRjaDQta2F0aWUtMTcuanBn.jpg')",

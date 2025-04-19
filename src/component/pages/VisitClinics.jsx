@@ -11,7 +11,7 @@ const VisitClinics = () => {
   });
   const { clinic } = assets.clinic;
   return (
-    <section className="flex flex-col md:flex-row items-center justify-between gap-x-8 bg-blue-500 text-white px-6 py-5 overflow-hidden">
+    <section className="flex flex-col md:flex-row items-center justify-between gap-x-8 bg-blue-500 text-white px-6 py-16 overflow-hidden">
      
       <motion.div
         initial={{ opacity: 0, x: -50 }}

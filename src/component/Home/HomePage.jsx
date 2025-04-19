@@ -12,6 +12,7 @@ import Testimonial from "../pages/Testimonial";
 import Process from "../pages/Process";
 import Quality from "../pages/Quality";
 import Marquee from "../pages/Marque";
+import Subscribe from "../pages/Subscribe";
 
 const HomePage = () => {
   return (
@@ -32,6 +33,7 @@ const HomePage = () => {
       <Testimonial />
       <Process />
       <Marquee />
+      <Subscribe/>
     </div>
   );
 };
