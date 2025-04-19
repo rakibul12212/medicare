@@ -8,6 +8,7 @@ import VisitClinics from "../pages/VisitClinics";
 import WhoWeAre from "../pages/WhoWeAre";
 import OptometryServices from "../pages/OptometryServices";
 import Team from "../pages/Team";
+import Testimonial from "../pages/Testimonial";
 
 const HomePage = () => {
   return (
@@ -22,7 +23,8 @@ const HomePage = () => {
       <CaregivingServices />
       <OptometryServices />
       <VisitClinics />
-      <Team/>
+      <Team />
+      <Testimonial />
       <WhoWeAre />
     </>
   );

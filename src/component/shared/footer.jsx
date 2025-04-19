@@ -69,7 +69,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="text-center text-sm text-gray-300 mt-10">
-        © {new Date().getFullYear()} HealthCare Clinic. All rights reserved.
+        © {new Date().getFullYear()} Medicare. All rights reserved.
       </div>
     </footer>
   );
