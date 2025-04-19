@@ -9,10 +9,13 @@ import WhoWeAre from "../pages/WhoWeAre";
 import OptometryServices from "../pages/OptometryServices";
 import Team from "../pages/Team";
 import Testimonial from "../pages/Testimonial";
+import Process from "../pages/Process";
+import Quality from "../pages/Quality";
+import Marquee from "../pages/Marque";
 
 const HomePage = () => {
   return (
-    <>
+    <div>
       <HeroSection />
       <div className="-mt-24 relative z-10 px-4 flex justify-center">
         <div className="max-w-6xl w-full">
@@ -20,13 +23,16 @@ const HomePage = () => {
         </div>
       </div>
       <About />
-      <CaregivingServices />
       <OptometryServices />
       <VisitClinics />
+      <CaregivingServices />
       <Team />
-      <Testimonial />
+      <Quality />
       <WhoWeAre />
-    </>
+      <Testimonial />
+      <Process />
+      <Marquee />
+    </div>
   );
 };
 

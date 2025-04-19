@@ -5,7 +5,7 @@ import { MdEmail, MdPhone } from "react-icons/md";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0A3D62] text-white py-10 mt-20">
+    <footer className="bg-[#0A3D62] text-white py-10 ">
       <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Logo / Clinic Name */}
         <div>

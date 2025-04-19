@@ -1,10 +1,9 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import { FaStar, FaQuoteRight } from "react-icons/fa";
 import "swiper/css";
-import "swiper/css/pagination";
 
 const testimonials = [
   {
@@ -17,13 +16,13 @@ const testimonials = [
     name: "Emily Clark",
     role: "Patient",
     image: "https://randomuser.me/api/portraits/women/65.jpg",
-    text: "Lorem Ipsum has been the industry standard dummy text ever since the 1500s. It has survived not only five centuries but also the leap into electronic typesetting.",
+    text: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomized words which don’t look even believable.",
   },
   {
     name: "Michael Lee",
     role: "Patient",
     image: "https://randomuser.me/api/portraits/men/32.jpg",
-    text: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+    text: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomized words which don’t look even believable.",
   },
 ];
 
@@ -53,15 +52,11 @@ const Testimonial = () => {
         {/* Swiper Testimonial Carousel */}
         <div className="relative">
           <Swiper
-            modules={[Pagination, Autoplay]}
+            modules={[Autoplay]}
             loop={true}
             autoplay={{
               delay: 5000,
               disableOnInteraction: false,
-            }}
-            pagination={{
-              el: ".custom-pagination",
-              clickable: true,
             }}
             spaceBetween={30}
             slidesPerView={1}
@@ -69,7 +64,7 @@ const Testimonial = () => {
           >
             {testimonials.map((testimonial, idx) => (
               <SwiperSlide key={idx}>
-                <div className="bg-white p-8 md:p-12 rounded-lg shadow-md h-full flex flex-col justify-between">
+                <div className="bg-white p-8 md:p-12  h-full flex flex-col justify-between">
                   <div>
                     <div className="flex items-center mb-4 text-orange-400">
                       {[...Array(5)].map((_, i) => (
@@ -98,7 +93,6 @@ const Testimonial = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-          <div className="custom-pagination flex justify-center mt-6 gap-2"></div>
         </div>
       </div>
     </section>

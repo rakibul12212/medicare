@@ -34,7 +34,7 @@ export default function WhoWeAreSection() {
   }, [isInView]);
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden">
+    <section ref={sectionRef} className="relative overflow-hidden ">
       {/* Background Image visible only on md and 2xl screens */}
       <div
         className="absolute inset-0 hidden md:block bg-cover bg-center"
