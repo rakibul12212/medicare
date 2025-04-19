@@ -43,70 +43,72 @@ const HeaderPage = () => {
   };
 
   return (
-    <nav className="flex items-center justify-between p-4 bg-[#F6F6F6] w-full relative z-50 shadow-sm">
-      {/* Logo */}
-      <Link href="#">
-        <div className="flex items-center ">
-          <Image src={logo} alt="logo" width={40} height={40} />
-          <span className="text-xl font-bold">
-            <span className="text-[#3B585E]">Medi</span>
-            <span className="text-[#4AC8B9]">Care</span>
-          </span>
-        </div>
-      </Link>
-
-      {/* Desktop Menu */}
-      <div className="hidden md:flex space-x-6 items-center">
-        {navLinks.map((link, index) => (
-          <div key={index} className="relative group">
-            <button className="flex items-center space-x-1 hover:text-blue-500">
-              {link.name}
-            </button>
+    <div className="sticky top-0 z-20">
+      <nav className="flex items-center justify-between p-4 bg-[#F6F6F6] w-full relative z-50 shadow-sm ">
+        {/* Logo */}
+        <Link href="#">
+          <div className="flex items-center ">
+            <Image src={logo} alt="logo" width={40} height={40} />
+            <span className="text-xl font-bold">
+              <span className="text-[#3B585E]">Medi</span>
+              <span className="text-[#4AC8B9]">Care</span>
+            </span>
           </div>
-        ))}
-      </div>
+        </Link>
 
-      {/* Contact */}
-      <div className="hidden md:flex items-center space-x-2">
-        <FaHeadset size={40} className="text-[#4AC8B9] text-xl" />
-        <div>
-          <p className="text-lg font-semibold">+1800-001-658</p>
-          <p className="text-sm text-gray-500">Mon-Fri: 6AM - 10PM</p>
-        </div>
-      </div>
-
-      {/* Mobile Menu Button */}
-      <button
-        className="md:hidden text-2xl focus:outline-none"
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        {menuOpen ? <FaTimes /> : <FaBars />}
-      </button>
-
-      {/* Animated Mobile Menu */}
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            className="absolute h-screen top-16 left-0 w-full bg-[#4AC8B9] shadow-xs flex flex-col md:hidden"
-            variants={menuVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-          >
-            {navLinks.map((link, index) => (
-              <Link
-                key={index}
-                href="#"
-                onClick={() => setMenuOpen(false)}
-                className="block px-4 py-3 border-b hover:bg-gray-100 text-gray-800 font-medium"
-              >
+        {/* Desktop Menu */}
+        <div className="hidden md:flex space-x-6 items-center">
+          {navLinks.map((link, index) => (
+            <div key={index} className="relative group">
+              <button className="flex items-center space-x-1 hover:text-blue-500">
                 {link.name}
-              </Link>
-            ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </nav>
+              </button>
+            </div>
+          ))}
+        </div>
+
+        {/* Contact */}
+        <div className="hidden md:flex items-center space-x-2">
+          <FaHeadset size={40} className="text-[#4AC8B9] text-xl" />
+          <div>
+            <p className="text-lg font-semibold">+1800-001-658</p>
+            <p className="text-sm text-gray-500">Mon-Fri: 6AM - 10PM</p>
+          </div>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-2xl focus:outline-none"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+
+        {/* Animated Mobile Menu */}
+        <AnimatePresence>
+          {menuOpen && (
+            <motion.div
+              className="absolute h-screen top-16 left-0 w-full bg-[#4AC8B9] shadow-xs flex flex-col md:hidden"
+              variants={menuVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+            >
+              {navLinks.map((link, index) => (
+                <Link
+                  key={index}
+                  href="#"
+                  onClick={() => setMenuOpen(false)}
+                  className="block px-4 py-3 border-b hover:bg-gray-100 text-gray-800 font-medium"
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </nav>
+    </div>
   );
 };
 
