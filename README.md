@@ -1,34 +1,84 @@
-/medicare
-│── /public
-│ ├── /images (For storing static images like doctor photos, banners, icons)
-│── /src
-│ │── /app
-│ │ ├── /layout.js (Main layout for the site)
-│ │ ├── /page.js (Homepage)
-│ │ ├── /about (About page)
-│ │ ├── /services (Medical services page)
-│ │ ├── /doctors (List of specialist doctors)
-│ │ ├── /contact (Contact form page)
-│ │ ├── /appointment (Appointment booking page)
-│ │ ├── /pricing (Pricing plans page)
-│ │ ├── /reviews (Customer testimonials)
-│ │── /components
-│ │ ├── /shared
-│ │ │ ├── Navbar.jsx
-│ │ │ ├── Footer.jsx
-│ │ ├── HeroSection.jsx
-│ │ ├── ServiceCard.jsx
-│ │ ├── DoctorCard.jsx
-│ │ ├── TestimonialCard.jsx
-│ │ ├── PricingCard.jsx
-│ │── /assets (For internal assets)
-│ │ ├── /images (Logos, icons, illustrations)
-│ │ ├── /fonts (Custom fonts if any)
-│ │ ├── /svgs (SVG illustrations and icons)
-│ │── /utils (Utility functions, constants, hooks)
-│ │── /styles (Global styles, Tailwind configurations)
-│── /package.json
-│── /next.config.js
-│── /tailwind.config.js
-│── /postcss.config.js
-│── /README.md
+
+# Medicare
+
+
+
+Medicare is a modern, responsive web app that connects patients with healthcare providers, offering easy access to appointments, doctor profiles, and medical services.
+
+---
+
+##  Technology Stack
+
+- Next.js 15 – React framework for SSR & static site generation
+
+- React 19 – Fast, component-based UI library
+
+- Tailwind CSS – Utility-first CSS framework for rapid, responsive design
+
+- Framer Motion – Smooth animations and motion graphics
+
+- Swiper – Touch-friendly and mobile-optimized sliders
+
+- React Icons – Customizable, scalable icons for UI
+
+- React Toastify – Elegant toast notifications for user feedback
+
+- clsx – Utility for managing dynamic class names
+
+- React CountUp – Animated numbers for dynamic statistics
+
+- React Intersection Observer – Lazy loading & scroll-based visibility tracking
+
+---
+
+##  Features
+
+-  Built with React 19 and Next.js 15
+-  Smooth animations with Framer Motion
+-  Animated stats using React CountUp
+-  Continuous scrolling with React Fast Marquee
+-  SEO and performance optimized
+-  Fully responsive layout
+-  Icon support via React Icons
+-  Toast notifications using React Toastify
+-  Interactive carousel and sliders using Swiper.js
+-  View-triggered animations with Intersection Observer
+
+---
+
+
+
+
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  https://github.com/rakibul12212/medicare.git
+```
+
+Go to the project directory
+
+```bash
+  cd my-project
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+
+
+## Demo
+
+## 🔗 https://medicare-ten-eta.vercel.app/
+
