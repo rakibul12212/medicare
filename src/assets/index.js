@@ -29,4 +29,12 @@ export const assets = {
     doctor5: "/doctor/doctor5.webp",
     doctor6: "/doctor/doctor6.webp",
   },
+  blog: {
+    b1: "/blog/b1.webp",
+    b2: "/blog/b2.webp",
+    b3: "/blog/b3.webp",
+    b4: "/blog/b4.webp",
+    b5: "/blog/b5.webp",
+    b6: "/blog/b6.webp",
+  },
 };
