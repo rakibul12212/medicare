@@ -20,6 +20,9 @@ export const assets = {
   clinic: {
     clinic: "/clinic/clinic.avif",
   },
+  serviceImg: {
+    s: "/serviceImg/s.webp",
+  },
   doctor: {
     doctor: "/doctor/doctor.png",
     doctor1: "/doctor/doctor1.webp",

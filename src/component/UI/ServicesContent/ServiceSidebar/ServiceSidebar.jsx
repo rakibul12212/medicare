@@ -1,7 +1,7 @@
 "use client";
 
+import { assets } from "@/assets";
 import { FaChevronRight } from "react-icons/fa";
-import { useState } from "react";
 
 const categories = [
   "Angiology Services",
@@ -36,6 +36,7 @@ export default function Sidebar({ selected, onSelect }) {
           </li>
         ))}
       </ul>
+      <img src={assets.serviceImg.s} alt="service" />
     </aside>
   );
 }

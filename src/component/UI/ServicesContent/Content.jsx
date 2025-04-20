@@ -67,14 +67,12 @@ export default function ContentSection({ selectedCategory }) {
       </h2>
 
       <div className="flex flex-col md:flex-row gap-8">
-        {/* Image */}
         <img
           src={imageSrc}
           alt={selectedCategory}
           className="w-full md:w-5/12 h-[300px] md:h-[360px]  object-cover "
         />
 
-        {/* Text Content */}
         <div className="flex-1 space-y-4">
           <h3 className="text-2xl font-semibold text-gray-800">
             Professional Medical Service of {selectedCategory.split(" ")[0]}
@@ -84,7 +82,6 @@ export default function ContentSection({ selectedCategory }) {
             top-notch treatment and patient care.
           </p>
 
-          {/* Features List */}
           <ul className="space-y-2 text-sm text-gray-700">
             {[
               "Experienced doctors and staff",
@@ -99,7 +96,6 @@ export default function ContentSection({ selectedCategory }) {
             ))}
           </ul>
 
-          {/* Advantage Section */}
           {advantages.length > 0 && (
             <div className="pt-4 space-y-2">
               <h4 className="text-2xl font-semibold text-gray-800">

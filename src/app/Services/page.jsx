@@ -1,13 +1,11 @@
 "use client";
 
 import { useState } from "react";
-
 import Breadcrumb from "@/component/UI/Breadcrumb";
 import Container from "@/component/UI/Container/Container";
 import ServiceSidebar from "@/component/UI/ServicesContent/ServiceSidebar/ServiceSidebar";
 import Accordion from "@/component/UI/ServicesContent/Accordion";
 import ContentSection from "@/component/UI/ServicesContent/Content";
-import Process from "@/component/pages/Process";
 
 const page = () => {
   const [selectedCategory, setSelectedCategory] = useState("Dental Services");
@@ -30,9 +28,7 @@ const page = () => {
           />
           <div className="flex-1">
             <ContentSection selectedCategory={selectedCategory} />
-            <div className="py-4">
-              <Process />
-            </div>
+
             <Accordion />
           </div>
         </div>
