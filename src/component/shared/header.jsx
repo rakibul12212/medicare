@@ -14,22 +14,22 @@ const HeaderPage = () => {
 
   const navLinks = [
     { name: "HOME", href: "/" },
-    { name: "SERVICES", href: "#services" },
+    { name: "SERVICES", href: "/Services" },
     { name: "BLOG", href: "/Blog" },
-    { name: "MAKE APPOINTMENT", href: "#appointment" },
-    { name: "CONTACT US", href: "#contact" },
+    { name: "MAKE APPOINTMENT", href: "/Aappointment" },
+    { name: "CONTACT US", href: "/Contact" },
   ];
 
   const handleNavigation = (href) => {
     if (href.startsWith("#")) {
-      // Scroll to section
+      
       const section = document.querySelector(href);
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
         setMenuOpen(false);
       }
     } else {
-      // Navigate to page
+      
       router.push(href);
       setMenuOpen(false);
     }
