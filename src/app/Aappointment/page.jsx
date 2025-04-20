@@ -57,7 +57,7 @@ const Page = () => {
         {/* Form Section */}
         <form
           onSubmit={handleSubmit}
-          className="bg-white p-6 md:p-8 rounded-xl w-full md:w-1/2 shadow-md"
+          className="bg-white p-6 md:p-8  w-full md:w-1/2 shadow-md"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Department */}
@@ -70,12 +70,13 @@ const Page = () => {
                 value={formData.department}
                 onChange={handleChange}
                 required
-                className="block w-full border border-gray-300 rounded-md px-4 py-2 text-sm focus:ring-blue-500 focus:border-blue-500"
+                className="block w-full border border-gray-50 bg-gray-50 outline-none rounded-md px-4 py-2 text-sm "
               >
                 <option value="">-- Choose Department --</option>
                 <option value="Gynecology">Gynecology</option>
                 <option value="Cardiology">Cardiology</option>
                 <option value="Neurology">Neurology</option>
+                <option value="Medicine">Medicine</option>
               </select>
             </div>
 
@@ -89,7 +90,7 @@ const Page = () => {
                 value={formData.doctor}
                 onChange={handleChange}
                 required
-                className="block w-full border border-gray-300 rounded-md px-4 py-2 text-sm focus:ring-blue-500 focus:border-blue-500"
+                className="block w-full border border-gray-50 bg-gray-50 outline-none rounded-md px-4 py-2 text-sm "
               >
                 <option value="">-- Choose Doctor --</option>
                 <option value="Naiden Smith">Naiden Smith</option>
@@ -106,7 +107,7 @@ const Page = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="col-span-2 border border-gray-300 rounded-md px-4 py-2 text-sm focus:ring-blue-500 focus:border-blue-500"
+              className="col-span-2 border border-gray-50 bg-gray-50 outline-none rounded-md px-4 py-2 text-sm "
             />
 
             {/* Phone & Email */}
@@ -117,7 +118,7 @@ const Page = () => {
               value={formData.phone}
               onChange={handleChange}
               required
-              className="border border-gray-300 rounded-md px-4 py-2 text-sm focus:ring-blue-500 focus:border-blue-500"
+              className="border border-gray-50 bg-gray-50 outline-none rounded-md px-4 py-2 text-sm "
             />
 
             <input
@@ -127,7 +128,7 @@ const Page = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="border border-gray-300 rounded-md px-4 py-2 text-sm focus:ring-blue-500 focus:border-blue-500"
+              className="border border-gray-50 bg-gray-50 outline-none rounded-md px-4 py-2 text-sm "
             />
 
             {/* Date & Time */}
@@ -137,7 +138,7 @@ const Page = () => {
               value={formData.date}
               onChange={handleChange}
               required
-              className="border border-gray-300 rounded-md px-4 py-2 text-sm focus:ring-blue-500 focus:border-blue-500"
+              className="border border-gray-50 bg-gray-50 outline-none rounded-md px-4 py-2 text-sm "
             />
 
             <input
@@ -145,8 +146,8 @@ const Page = () => {
               name="time"
               value={formData.time}
               onChange={handleChange}
-              required
-              className="border border-gray-300 rounded-md px-4 py-2 text-sm focus:ring-blue-500 focus:border-blue-500"
+              placeholder="time"
+              className="border border-gray-50 bg-gray-50 outline-none rounded-md px-4 py-2 text-sm "
             />
 
             {/* Note */}
@@ -155,7 +156,7 @@ const Page = () => {
               placeholder="Type Appointment Note"
               value={formData.note}
               onChange={handleChange}
-              className="col-span-2 border border-gray-300 rounded-md px-4 py-2 text-sm focus:ring-blue-500 focus:border-blue-500 min-h-[100px]"
+              className="col-span-2 border border-gray-50 bg-gray-50 outline-none rounded-md px-4 py-2 text-sm  min-h-[100px]"
             ></textarea>
 
             {/* Submit */}
