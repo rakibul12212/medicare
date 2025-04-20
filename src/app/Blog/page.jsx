@@ -90,6 +90,7 @@ import { assets } from "@/assets";
 import BlogCard from "@/component/UI/BlogCard/BlogCard";
 import BlogSidebar from "@/component/UI/BlogSidebar/BlogSidebar";
 import Container from "@/component/UI/Container/Container";
+import Breadcrumb from "@/component/UI/Breadcrumb";
 
 // Dummy posts data (keep as is)
 const blogPosts = [
@@ -151,43 +152,21 @@ const formatPathName = (segment) => {
 };
 
 const BlogPage = () => {
-  const pathname = usePathname(); 
+  const pathname = usePathname();
   const pathSegments = pathname.split("/").filter((seg) => seg);
 
   return (
     <Container>
       <div className="">
         {/* Heading */}
-        <h1 className="text-4xl font-semibold text-left text-[#3B585E] bg-gray-50 px-5 md:px-20 pt-10">
-          {formatPathName(pathSegments[pathSegments.length - 1] || "Blog")}
-        </h1>
+        <div className="bg-gray-50">
+          <h1 className="text-4xl font-semibold text-left text-[#3B585E]  px-5 md:px-20 pt-10">
+            Blogs
+          </h1>
 
-        {/* Breadcrumb */}
-        <div className="flex items-center gap-2 bg-gray-50 text-gray-600 text-sm px-5 md:px-20 pb-6 pt-4">
-          <AiFillHome className="text-xl text-[#3B585E]" />
-          <Link href="/" className="hover:underline text-[#3B585E]">
-            Home
-          </Link>
-
-          {pathSegments.map((seg, index) => {
-            const href = "/" + pathSegments.slice(0, index + 1).join("/");
-            const isLast = index === pathSegments.length - 1;
-
-            return (
-              <div key={href} className="flex items-center gap-2">
-                <span>{">"}</span>
-                {isLast ? (
-                  <span className="text-[#3B585E] font-medium">
-                    {formatPathName(seg)}
-                  </span>
-                ) : (
-                  <Link href={href} className="hover:underline text-[#3B585E]">
-                    {formatPathName(seg)}
-                  </Link>
-                )}
-              </div>
-            );
-          })}
+          <div className="px-5 md:px-20">
+            <Breadcrumb />
+          </div>
         </div>
 
         {/* Content */}
