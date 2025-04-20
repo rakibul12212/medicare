@@ -1,21 +1,189 @@
-import Breadcrumb from '@/component/UI/Breadcrumb';
-import Container from '@/component/UI/Container/Container';
-import React from 'react';
+"use client";
 
-const page = () => {
-    return (
-      <Container>
-        <div className="bg-gray-50">
-          <h1 className="text-4xl font-semibold text-left text-[#3B585E]  px-5 md:px-20 pt-10">
-            Appointment
-          </h1>
+import { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Breadcrumb from "@/component/UI/Breadcrumb";
+import Container from "@/component/UI/Container/Container";
+import { assets } from "@/assets";
+import BlogPage from "@/component/pages/BlogPage";
 
-          <div className="px-5 md:px-20">
-            <Breadcrumb />
-          </div>
+const Page = () => {
+  const [formData, setFormData] = useState({
+    department: "",
+    doctor: "",
+    name: "",
+    email: "",
+    phone: "",
+    date: "",
+    time: "",
+    note: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    toast.success("Appointment booked successfully!", {
+      position: "top-right",
+    });
+
+    setFormData({
+      department: "",
+      doctor: "",
+      name: "",
+      email: "",
+      phone: "",
+      date: "",
+      time: "",
+      note: "",
+    });
+  };
+
+  return (
+    <Container>
+      <div className="bg-gray-50">
+        <h1 className="text-4xl font-semibold text-left text-[#3B585E] px-5 md:px-20 pt-10">
+          Appointment
+        </h1>
+        <div className="px-5 md:px-20">
+          <Breadcrumb />
         </div>
-      </Container>
-    );
+      </div>
+
+      <div className="flex flex-col-reverse md:flex-row items-center gap-10 p-6 md:p-12 bg-[#FFFFFF]   max-w-6xl mx-auto">
+        {/* Form Section */}
+        <form
+          onSubmit={handleSubmit}
+          className="bg-white p-6 md:p-8 rounded-xl w-full md:w-1/2 shadow-md"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Department */}
+            <div className="col-span-2">
+              <label className="block text-sm font-semibold text-gray-700 mb-1">
+                Select Department
+              </label>
+              <select
+                name="department"
+                value={formData.department}
+                onChange={handleChange}
+                required
+                className="block w-full border border-gray-300 rounded-md px-4 py-2 text-sm focus:ring-blue-500 focus:border-blue-500"
+              >
+                <option value="">-- Choose Department --</option>
+                <option value="Gynecology">Gynecology</option>
+                <option value="Cardiology">Cardiology</option>
+                <option value="Neurology">Neurology</option>
+              </select>
+            </div>
+
+            {/* Doctor */}
+            <div className="col-span-2">
+              <label className="block text-sm font-semibold text-gray-700 mb-1">
+                Choose Doctor by Name
+              </label>
+              <select
+                name="doctor"
+                value={formData.doctor}
+                onChange={handleChange}
+                required
+                className="block w-full border border-gray-300 rounded-md px-4 py-2 text-sm focus:ring-blue-500 focus:border-blue-500"
+              >
+                <option value="">-- Choose Doctor --</option>
+                <option value="Naiden Smith">Naiden Smith</option>
+                <option value="Sophia Lee">Sophia Lee</option>
+                <option value="James Arthur">James Arthur</option>
+              </select>
+            </div>
+
+            {/* Name */}
+            <input
+              type="text"
+              name="name"
+              placeholder="Patient Name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              className="col-span-2 border border-gray-300 rounded-md px-4 py-2 text-sm focus:ring-blue-500 focus:border-blue-500"
+            />
+
+            {/* Phone & Email */}
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+              className="border border-gray-300 rounded-md px-4 py-2 text-sm focus:ring-blue-500 focus:border-blue-500"
+            />
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className="border border-gray-300 rounded-md px-4 py-2 text-sm focus:ring-blue-500 focus:border-blue-500"
+            />
+
+            {/* Date & Time */}
+            <input
+              type="date"
+              name="date"
+              value={formData.date}
+              onChange={handleChange}
+              required
+              className="border border-gray-300 rounded-md px-4 py-2 text-sm focus:ring-blue-500 focus:border-blue-500"
+            />
+
+            <input
+              type="time"
+              name="time"
+              value={formData.time}
+              onChange={handleChange}
+              required
+              className="border border-gray-300 rounded-md px-4 py-2 text-sm focus:ring-blue-500 focus:border-blue-500"
+            />
+
+            {/* Note */}
+            <textarea
+              name="note"
+              placeholder="Type Appointment Note"
+              value={formData.note}
+              onChange={handleChange}
+              className="col-span-2 border border-gray-300 rounded-md px-4 py-2 text-sm focus:ring-blue-500 focus:border-blue-500 min-h-[100px]"
+            ></textarea>
+
+            {/* Submit */}
+            <button
+              type="submit"
+              className="col-span-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-md transition-all duration-300"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+
+        {/* Image Section */}
+        <div className="w-full md:w-1/2 flex justify-center items-center">
+          <img
+            src={assets.doctor.doctor}
+            alt="Doctor"
+            className="w-full max-w-[350px] h-auto object-contain"
+          />
+        </div>
+
+        <ToastContainer />
+      </div>
+      <div>
+        <BlogPage />
+      </div>
+    </Container>
+  );
 };
 
-export default page;
+export default Page;
