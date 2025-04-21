@@ -92,7 +92,7 @@ const Appointment = () => {
           </select>
           <input
             type="date"
-            className="basis-full sm:basis-[32%] h-12 px-4 bg-white border border-gray-300 rounded outline-none"
+            className="basis-full sm:basis-[32%] h-12 px-4 bg-white text-black border border-gray-300 rounded outline-none"
             value={formData.date}
             onChange={(e) => setFormData({ ...formData, date: e.target.value })}
             required
